@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import Box from '@mui/material/Box';
-
+import './BarGraph.css';
 function BarGraph({ userId }) {
   const [data, setDatabaseData] = useState([]);
   const [selectedDomain, setSelectedDomain] = useState('Linux');
@@ -157,7 +157,7 @@ function BarGraph({ userId }) {
               Bar Chart <i className="fas fa-chart-bar"></i>
             </h1>
             <div className="dropdown-container">
-              <label htmlFor="domainDropdown">Select Domain:</label>
+              <label htmlFor="domainDropdown" style={{fontFamily:'serif',fontSize:18}}>Select Domain:</label>
               <select id="domainDropdown" onChange={handleDomainChange} value={selectedDomain}>
                 {domainNames.map((domain, index) => (
                   <option key={index} value={domain}>
@@ -167,7 +167,8 @@ function BarGraph({ userId }) {
               </select>
               {selectedDomain && (
                 <>
-                  <label htmlFor="difficultyDropdown">Select Difficulty:</label>
+                <br></br>
+                  <label htmlFor="difficultyDropdown" style={{fontFamily:'serif',fontSize:18}}>Select Difficulty:</label>
                   <select id="difficultyDropdown" onChange={handleDifficultyChange} value={selectedDifficulty}>
                     <option value="">All Difficulties</option>
                     <option value="easy">Easy</option>
@@ -178,7 +179,7 @@ function BarGraph({ userId }) {
               )}
             </div>
             <div className="chart-container">
-              <div className="chart-title">Performance Comparison</div>
+              <div className="chart-title" style={{fontFamily:'serif',fontSize:18}}>Performance Comparison</div>
               <div className="chart">
                 <Chart
                   options={initialData.options}

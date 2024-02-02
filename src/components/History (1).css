@@ -3,7 +3,7 @@
     margin-top: 10px;
     padding: 20px;
     box-shadow: 1px 5px 16px 0px rgba(185, 192, 191, 0.493);
-    background: linear-gradient(#8572df40, rgba(0, 0, 0, 0));
+   
     height: max-content;
   }
   
@@ -21,7 +21,8 @@
     background-color: linear-gradient(#63b7e740, rgba(231, 230, 230, 0));
     max-height: 100vh;
     overflow-y: scroll;
-  
+    
+
   }
   
   .quiz-card {
@@ -40,12 +41,27 @@
     background-color: #eee;
     transform: scale(1.02);
     box-shadow: 1px 2px 8px 0px rgba(0, 0, 0, 0.459);
+    &.easy {
+      /* background: linear-gradient(#d6f5d6, #aaffaa);  */
+    box-shadow: 1px 2px 8px 0px rgba(130, 226, 130, 0.8);
+    }
+  
+    &.medium {
+      /* background: linear-gradient(#fffae5, #ffd700);  */
+      box-shadow: 1px 2px 8px 0px rgba(255, 221, 0, 0.8); /* Lighter yellow shadow */
+    }
+  
+    &.difficult {
+      /* background: linear-gradient(#ffbdbd, #e74c3c); */
+      box-shadow: 1px 2px 8px 0px rgba(255, 99, 71, 0.8);
+    }
 
   }
   
   .quiz-card.selected {
     background-color: #f8f8f8;
     /* background: linear-gradient(#8572df40, rgba(0, 0, 0, 0)); */
+    
 
     
   }
@@ -62,15 +78,23 @@
   
   .quiz-details {
     display: flex;
-    justify-content: space-between;
-    /* justify-content: center; */
+    justify-content:space-between;
     align-items: center;
     margin-top: 10px;
-    /* font-family: 'YourChosenFont', cursive; */
-    
-    
-
+    font-family: 'Pacifico';
   }
+
+  
+  
+
+
+
+
+
+
+
+
+
   
   .answers {
     margin-top: 10px;

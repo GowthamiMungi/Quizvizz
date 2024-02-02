@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import Box from '@mui/material/Box';
+import './LineGraph.css';
 import Sidenav from './Sidenav';
 
 function LineGraph({ userId }) {
@@ -150,7 +151,7 @@ function LineGraph({ userId }) {
   };
   
   const domainNames = [...new Set(data.map(item => item.domain))];
-  const difficultyLevels = ["easy", "medium", "difficult"];
+  const difficultyLevels = ["Easy", "Medium", "Difficult"];
 
   return (
     <>
@@ -162,8 +163,8 @@ function LineGraph({ userId }) {
             <h1>
               Line Chart <i className="fas fa-chart-line"></i>
             </h1>
-            <label>Select Domain:</label>
-            <select onChange={handleDomainChange} value={selectedDomain}>
+            <label style={{fontFamily:'serif',fontSize:18}}>Select Domain:</label>
+            <select onChange={handleDomainChange} value={selectedDomain} style={{fontFamily:'serif',fontSize:18}}>
               <option value="">Select Domain</option>
               {domainNames.map((name, index) => (
                 <option key={index} value={name}>
@@ -174,8 +175,8 @@ function LineGraph({ userId }) {
 
             {selectedDomain && (
               <div>
-                <label>Select Difficulty:</label>
-                <select onChange={handleDifficultyChange} value={selectedDifficulty}>
+                <label style={{fontFamily:'serif',fontSize:18}}>Select Difficulty:</label>
+                <select onChange={handleDifficultyChange} value={selectedDifficulty} style={{fontFamily:'serif',fontSize:18}}>
                   <option value="">Select Difficulty</option>
                   {difficultyLevels.map((level, index) => (
                     <option key={index} value={level}>
@@ -187,7 +188,7 @@ function LineGraph({ userId }) {
             )}
 
                 <div className="chart-container">
-                    <div className="chart-title">Performance Comparison</div>
+                    <div className="chart-title" style={{fontFamily:'serif',fontSize:18}}>Performance Comparison</div>
                     <div className="chart">
                       <Chart
                         options={{
